@@ -1,19 +1,50 @@
-import React from 'react'
-
-
-//Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
+import { useNavigate, useParams } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { useDentistContext } from "../Context/Context";
+import DentistDetail from "../Components/DentistDetail";
 
 const Detail = () => {
- 
-  // Consumiendo el parametro dinamico de la URL deberan hacer un fetch a un user en especifico
+  const { id } = useParams();
+  const navigate = useNavigate();
+  const [errorToGetDentist, setErrorToGetDentist] = useState(false);
+
+  const { state, dispatch } = useDentistContext();
+  const { dentist } = state;
+
+  const getDentistDetail = async () => {
+    try {
+      const res = await fetch(
+        `https://jsonplaceholder.typicode.com/users/${id}`
+      );
+      if (!res.ok) {
+        throw new Error(`HTTP error! Status: ${res.status}`);
+      }
+      const data = await res.json();
+      dispatch({ type: "GET_DENTIST", payload: data });
+    } catch (error) {
+      console.error("Error fetching data:", error);
+      setErrorToGetDentist(true);
+    }
+  };
+
+  useEffect(() => {
+    getDentistDetail();
+    (dentist);
+  }, []);
 
   return (
     <>
-      <h1>Detail Dentist id </h1>
-      {/* aqui deberan renderizar la informacion en detalle de un user en especifico */}
-      {/* Deberan mostrar el name - email - phone - website por cada user en especifico */}
-    </>
-  )
-}
+      {!errorToGetDentist ? (
+        <DentistDetail navigate={navigate} dentist={dentist}/>
+      ) : (
+        <h2 className="not-found">
+          Dentist with id {id} not exist. Check id and try again!
+        </h2>
+      )}
 
-export default Detail
+
+    </>
+  );
+};
+
+export default Detail;
