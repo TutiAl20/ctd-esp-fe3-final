@@ -11,8 +11,8 @@ const Card = ({ data, children }) => {
           alt="profile-pic"
         />
         <div className="card-info">
-          <h3>Name: {data.name}</h3>
-          <h4>User: {data.username}</h4>
+          <h3>Nombre: {data.name}</h3>
+          <h4>Usuario: {data.username}</h4>
         </div>
       </Link>
       {children}

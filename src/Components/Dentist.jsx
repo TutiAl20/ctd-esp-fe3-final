@@ -1,4 +1,4 @@
-import "../Styles/DetailDentist.css";
+import "../Styles/Dentist.css";
 
 const DentistDetail = ({ navigate, dentist }) => {
   return (

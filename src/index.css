@@ -65,8 +65,7 @@ form{
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  width: 300px;
-  height: 100px;
+  width: 600px;
   margin: 0 auto;
 }
 
@@ -109,14 +108,27 @@ td, th {
   padding: 8px;
 }
 
-tr:nth-child(even) {
-  background-color: #dddddd;
+
+
+.main-container {
+  padding: 120px 20px;
+  min-height: 70vh;
 }
 
-.dark{
-  background-color: #12121296;
-  color: white;
+.main-container.light {
+  background-color: #fff;
 }
-.dark > a {
-  color: white;
+
+.main-container.light a,
+.main-container.light > *{
+  color: #333;
+}
+
+.main-container.dark {
+  background-color: #333;
+}
+
+.main-container.dark a,
+.main-container.dark > * {
+  color: #fff;
 }

@@ -1,9 +1,8 @@
 import React from "react";
-import { routes } from "../utils/routes";
+import { routes } from "../util/routes";
 import { Link } from "react-router-dom";
 import { useDentistContext } from "../Context/Context"
 import "../Styles/Navbar.css"
-//Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 
 const Navbar = () => {
   const {state,dispatch} = useDentistContext();
@@ -17,12 +16,12 @@ const Navbar = () => {
           <h4>Home</h4>
         </Link>
         <Link to={routes.contact}>
-          <h4>Contact</h4>
+          <h4>Contacto</h4>
         </Link>
         <Link to={routes.favs}>
-          <h4>Favs</h4>
+          <h4>Destacados</h4>
         </Link>
-        <button className="theme-button" onClick={() => dispatch({type: "TOGGLE_THEME"})} >Change theme</button>
+        <button className="theme-button" onClick={() => dispatch({type: "TOGGLE_THEME"})} >Cambiar Tema</button>
       </div>
     </nav>
   );
