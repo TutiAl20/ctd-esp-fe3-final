@@ -1,0 +1,13 @@
+.error-message {
+    color: #d32f2f;
+    margin-top: 1rem;
+}
+
+.error-message ul {
+    padding: 0;
+    list-style: none;
+}
+
+.error-message li {
+    margin-bottom: 0.5rem;
+}
