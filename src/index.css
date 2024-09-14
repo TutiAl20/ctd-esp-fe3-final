@@ -4,16 +4,17 @@ body {
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  -moz-osx-font-smoothing: grayscale;  
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
 .favButton{
   background-color: rgba(136, 136, 136, 0.116);
-  padding: 10px;
+  padding: 6px;
   border: none;
   width: 100%;
   cursor: pointer;
@@ -109,7 +110,6 @@ td, th {
 }
 
 
-
 .main-container {
   padding: 120px 20px;
   min-height: 70vh;
@@ -131,4 +131,42 @@ td, th {
 .main-container.dark a,
 .main-container.dark > * {
   color: #fff;
+}
+
+.nav-links.light a {
+  transition: color .7s ease-in-out;
+  color: #333;  
+}
+
+.nav-links.dark a {
+  transition: color 2s ease;
+  color: #fff;  
+}
+
+.navbar.light {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.navbar.dark {
+  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+  background-color: #333;
+}
+
+.logo-link.light {
+  color: #333;
+}
+
+.logo-link.dark {
+  color: #fff;
+}
+
+[data-theme='dark'] {
+  --background: #05010a;
+  --text-primary: #f2f2f2;
+  --text-secondary: #a7a4a4;
+  --accent: #6a5acd;
+  --accent-hover: #5b4cbe; 
+  --border: #696969;
+  --shadow: 7px 15px 13px -4px #ffffff1b;
 }

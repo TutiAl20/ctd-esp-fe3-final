@@ -1,8 +1,8 @@
 import React from "react";
+import "../Styles/Navbar.css"
 import { routes } from "../util/routes";
 import { Link } from "react-router-dom";
 import { useDentistContext } from "../Context/Context"
-import "../Styles/Navbar.css"
 
 const Navbar = () => {
   const {state,dispatch} = useDentistContext();
@@ -21,7 +21,9 @@ const Navbar = () => {
         <Link to={routes.favs}>
           <h4>Destacados</h4>
         </Link>
-        <button className="theme-button" onClick={() => dispatch({type: "TOGGLE_THEME"})} >Cambiar Tema</button>
+        <button className="theme-button" onClick={() => dispatch({type: "TOGGLE_THEME"})} >
+          Cambiar Tema
+          </button>
       </div>
     </nav>
   );
